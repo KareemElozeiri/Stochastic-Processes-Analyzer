@@ -7,4 +7,7 @@ class AppManager:
         self.stochastics_analyzer = StochasticsAnalyzer()
         self.UI = UI()
         print("App Manager started...")
+    
+    def run(self):
+        self.UI.run()
         
