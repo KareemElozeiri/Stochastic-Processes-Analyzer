@@ -12,6 +12,7 @@ from kivy.core.window import Window
 class UI(App):
     def __init__(self, **kwargs):
         super(UI, self).__init__(**kwargs)
+        self.title = "Stochastics"
     
 
     def build(self):
@@ -34,5 +35,9 @@ class UI(App):
     #screen switching functions
     def switch_to_load_view(self, dt=0):
         self.screen_manager.current = "load"
+    
+    def switch_to_main_view(self, dt=0):
+        self.screen_manager.current = "main"
+
 
     

@@ -34,7 +34,7 @@ class LoadView(GridLayout):
         self.add_widget(self.__status_bar)
     
     def cancel_action(self):
-        Clock.schedule_once(self.app.switch_to_main_view,0.5)
+        Clock.schedule_once(self.__app.switch_to_main_view,0.5)
     
     def load_action(self):
         if len(self.file_chooser.selection)!=0:
