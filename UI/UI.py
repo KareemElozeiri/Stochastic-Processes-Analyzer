@@ -38,6 +38,9 @@ class UI(App):
         self.screen_manager.current = "load"
     
     def switch_to_main_view(self, dt=0):
+        if self.app_manager.stochastics_analyzer != None:
+            total_average_power = self.app_manager.stochastics_analyzer.calc_total_average_power()
+            self.main_view.set_total_average_power_label_text(f"Total Average Power: {total_average_power} watt")
         self.screen_manager.current = "main"
 
 
