@@ -10,9 +10,10 @@ from kivy.core.window import Window
 
 
 class UI(App):
-    def __init__(self, **kwargs):
+    def __init__(self, app_manager, **kwargs):
         super(UI, self).__init__(**kwargs)
         self.title = "Stochastics"
+        self.app_manager = app_manager
     
 
     def build(self):

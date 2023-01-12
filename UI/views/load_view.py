@@ -13,6 +13,7 @@ class LoadView(GridLayout):
 
         #file chooser
         self.__file_chooser = FileChooserIconView()
+        self.__file_chooser.path = "."
         self.add_widget(self.__file_chooser)
 
         subgrid0 = GridLayout(cols=2,size_hint_y=None,height=50)
@@ -36,10 +37,20 @@ class LoadView(GridLayout):
     def cancel_action(self):
         Clock.schedule_once(self.__app.switch_to_main_view,0.5)
     
+    #load functions
     def load_action(self):
-        if len(self.file_chooser.selection)!=0:
-            #TODO: to be modified to suit tha application'
-            pass 
+        if len(self.__file_chooser.selection)!=0:
+            if self.__file_chooser.selection[0][-4:] !=".csv":
+                self.add_status_bar_msg("Invalid file: .csv extension is the only type allowed")
+            else:
+                self.__app.app_manager.set_loaded_file(self.__file_chooser.selection[0])
+                self.__app.main_view.set_loaded_file_txt(self.__file_chooser.selection[0])
+                self.__app.switch_to_main_view()
+        else:
+            self.add_status_bar_msg("")
+
+
+    # status bar functions
     def empty_status_bar(self,dt):
         self.__status_bar.text = ""
 
