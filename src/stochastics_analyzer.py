@@ -42,6 +42,7 @@ class StochasticsAnalyzer():
         T = self.__time_vector[-1] - self.__time_vector[0]
         return np.round(x__2.sum()/(len(x__2)*T),3)
         
+        
 
     def plot_M_samples(self, M):
         samples = self.__signal_ensemble[np.random.randint(self.__signal_ensemble.shape[0],size=M)]
