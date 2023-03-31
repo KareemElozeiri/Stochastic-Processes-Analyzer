@@ -135,7 +135,3 @@ class StochasticsAnalyzer():
         plt.grid()
         plt.show()
                 
-
-    
-    def plot_full_time_ACF(self):
-        pass 
