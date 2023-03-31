@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot  as plt 
 from matplotlib import cm
 from scipy.fft import fft 
+
 class StochasticsAnalyzer():
     def __init__(self,time_vector, signal_ensemble) -> None:
         self.__time_vector = time_vector
